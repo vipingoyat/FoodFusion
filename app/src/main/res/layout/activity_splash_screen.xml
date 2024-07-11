@@ -17,8 +17,9 @@
         app:layout_constraintHorizontal_bias="0.901"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.164"
-        app:srcCompat="@drawable/logo" />
+        app:layout_constraintVertical_bias="0.168"
+        app:srcCompat="@drawable/logo"
+        android:elevation="18dp"/>
 
     <ImageView
         android:id="@+id/imageView5"
@@ -76,15 +77,15 @@
         android:fontFamily="@font/aladin"
         android:text="Food Fusion"
         android:textAlignment="center"
+        android:textColor="@color/white"
         android:textSize="49sp"
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toTopOf="@+id/imageView5"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.534"
+        app:layout_constraintHorizontal_bias="0.519"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        android:textColor="@color/white"/>
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textView3"
