@@ -17,7 +17,7 @@ class Splash_Screen : AppCompatActivity() {
             val intent = Intent(this,StartActivity::class.java)
             startActivity(intent)
             finish()
-        },3000)
+        },2000)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
