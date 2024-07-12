@@ -11,11 +11,17 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/edittextshape"
+        android:elevation="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/menu"
-        app:itemRippleColor="@color/white"/>
+        app:itemActiveIndicatorStyle="@color/Red"
+        app:itemRippleColor="@color/Red"
+        app:itemTextAppearanceActive="@color/Red"
+        app:itemIconTint="@color/Red"
+        app:itemTextColor="@color/Red"/>
 
     <TextView
         android:id="@+id/textView14"
@@ -25,8 +31,10 @@
         android:layout_marginTop="36dp"
         android:fontFamily="@font/aladin"
         android:text="FoodFusion"
-        android:textColor="@color/Red"
-        android:textSize="35sp"
+        android:textColor="@color/black"
+        android:textSize="37sp"
+        android:shadowColor="@color/Red"
+        android:elevation="90dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -38,6 +46,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/textView14"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textView14"
-        app:srcCompat="@drawable/bell_icon" />
+        app:srcCompat="@drawable/bell_icon"
+        app:tint="@color/Red" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
