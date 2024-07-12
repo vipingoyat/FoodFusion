@@ -9,26 +9,27 @@
     android:background="@color/white">
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/edittextshape"
         android:elevation="18dp"
+        app:itemActiveIndicatorStyle="@color/Red"
+        app:itemIconTint="@color/Red"
+        app:itemRippleColor="@color/Red"
+        app:itemTextAppearanceActive="@color/Red"
+        app:itemTextColor="@color/Red"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/menu"
-        app:itemActiveIndicatorStyle="@color/Red"
-        app:itemRippleColor="@color/Red"
-        app:itemTextAppearanceActive="@color/Red"
-        app:itemIconTint="@color/Red"
-        app:itemTextColor="@color/Red"/>
+        app:menu="@menu/menu" />
 
     <TextView
         android:id="@+id/textView14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="32dp"
         android:fontFamily="@font/aladin"
         android:text="FoodFusion"
         android:textColor="@color/black"
@@ -48,5 +49,18 @@
         app:layout_constraintTop_toTopOf="@+id/textView14"
         app:srcCompat="@drawable/bell_icon"
         app:tint="@color/Red" />
+
+    <fragment
+        android:id="@+id/fragmentContainerView4"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/navigation"
+        app:layout_constraintTop_toBottomOf="@id/textView14"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigationView2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
