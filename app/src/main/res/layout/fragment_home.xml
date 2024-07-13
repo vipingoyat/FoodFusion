@@ -48,7 +48,7 @@
         android:layout_marginTop="16dp"
         android:text="Popular"
         android:fontFamily="@font/acme"
-        android:textSize="17dp"
+        android:textSize="22dp"
         android:textStyle="bold"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
@@ -56,8 +56,8 @@
 
     <TextView
         android:id="@+id/textView16"
-        android:layout_width="81dp"
-        android:layout_height="27dp"
+        android:layout_width="83dp"
+        android:layout_height="29dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:backgroundTint="@color/Red"
