@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/white">
+    android:gravity="center"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.cardview.widget.CardView
         android:layout_width="350dp"
@@ -25,7 +26,7 @@
             android:background="@color/white">
 
             <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/popularimage"
+                android:id="@+id/menuimage"
                 android:layout_width="64dp"
                 android:layout_height="64dp"
                 android:layout_marginLeft="14dp"
@@ -37,7 +38,7 @@
                 tools:srcCompat="@tools:sample/avatars" />
 
             <TextView
-                android:id="@+id/popularfoodname"
+                android:id="@+id/menufoodname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
@@ -46,12 +47,12 @@
                 android:textColor="@color/black"
                 android:fontFamily="@font/abhaya_libre"
                 android:textSize="17dp"
-                app:layout_constraintBottom_toBottomOf="@+id/popularimage"
-                app:layout_constraintStart_toEndOf="@+id/popularimage"
-                app:layout_constraintTop_toTopOf="@+id/popularimage" />
+                app:layout_constraintBottom_toBottomOf="@+id/menuimage"
+                app:layout_constraintStart_toEndOf="@+id/menuimage"
+                app:layout_constraintTop_toTopOf="@+id/menuimage" />
 
             <TextView
-                android:id="@+id/popularaddtocart"
+                android:id="@+id/menuaddtocart"
                 android:layout_width="82.5dp"
                 android:layout_height="22dp"
                 android:layout_marginTop="15dp"
@@ -60,26 +61,26 @@
                 android:text="Add to Cart"
                 android:textAlignment="gravity"
                 android:textColor="@color/white"
-                app:layout_constraintEnd_toEndOf="@+id/popularprice"
-                app:layout_constraintStart_toStartOf="@+id/popularprice"
-                app:layout_constraintTop_toBottomOf="@+id/popularprice" />
+                app:layout_constraintEnd_toEndOf="@+id/menuprice"
+                app:layout_constraintStart_toStartOf="@+id/menuprice"
+                app:layout_constraintTop_toBottomOf="@+id/menuprice" />
 
             <TextView
-                android:id="@+id/popularprice"
+                android:id="@+id/menuprice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="152dp"
                 android:layout_marginTop="17dp"
-                android:fontFamily="@font/abhaya_libre"
+                android:layout_marginLeft="152dp"
                 android:text="Rs 417"
-                android:textColor="@color/black"
                 android:textSize="18dp"
                 android:textStyle="bold"
+                android:fontFamily="@font/abhaya_libre"
+                android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/popularimage"
+                app:layout_constraintStart_toEndOf="@+id/menuimage"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
