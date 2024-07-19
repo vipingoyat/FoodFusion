@@ -27,6 +27,7 @@
             app:iss_auto_cycle="true"
             app:iss_delay="1500"
             app:iss_period="1500"
+            android:elevation="7dp"
             app:iss_text_align="NONE" />
     </androidx.cardview.widget.CardView>
 
