@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.foodfusion.adapter.MenuAdapter
+import com.example.foodfusion.adapter.NotificationAdapter
 import com.example.foodfusion.databinding.FragmentMenuBottomsheetFragmentBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
@@ -43,7 +44,7 @@ class Menu_bottomsheet_fragment : BottomSheetDialogFragment() {
             R.drawable.gulab_jamun_pic,
             R.drawable.subway_pic
         )
-        val adapter = MenuAdapter(ArrayList(menuFoodName),ArrayList(menuItemPrice), ArrayList(menuImage))
+        val adapter = MenuAdapter(ArrayList(menuFoodName),ArrayList(menuItemPrice),ArrayList(menuImage))
         binding.menuRecyclerView.layoutManager = LinearLayoutManager(requireContext())
         binding.menuRecyclerView.adapter = adapter
         return binding.root
