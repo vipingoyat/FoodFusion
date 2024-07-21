@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.foodfusion.CongratulationsFragment
 import com.example.foodfusion.PayOutActivity
 import com.example.foodfusion.R
 import com.example.foodfusion.adapter.CartAdapter
@@ -18,7 +19,7 @@ class CartFragment : Fragment() {
     private lateinit var binding: FragmentCartBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
-
+            super.onCreate(savedInstanceState)
     }
 
     override fun onCreateView(
@@ -41,7 +42,7 @@ class CartFragment : Fragment() {
         val adapter = CartAdapter(ArrayList(cartFoodName),ArrayList(cartItemPrice), ArrayList(cartImage))
         binding.cartRecyclerView.layoutManager = LinearLayoutManager(requireContext())
         binding.cartRecyclerView.adapter = adapter
-        binding.button3.setOnClickListener {
+        binding.proceedButton.setOnClickListener {
             val intent = Intent(requireContext(), PayOutActivity::class.java)
             startActivity(intent)
         }
