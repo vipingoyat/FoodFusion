@@ -80,7 +80,7 @@ class HomeFragment : Fragment() {
             R.drawable.chole_bhature_pic,
             R.drawable.rasmalai_pic,
             R.drawable.gulab_jamun_pic)
-        val adapter = PopularAdapter(foodname,price,popularFoodImages)
+        val adapter = PopularAdapter(foodname,price,popularFoodImages,requireContext())
         binding.popularRecyclerView.layoutManager = LinearLayoutManager(requireContext())
         binding.popularRecyclerView.adapter = adapter
     }

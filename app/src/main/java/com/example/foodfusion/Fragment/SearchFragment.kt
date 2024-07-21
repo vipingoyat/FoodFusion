@@ -50,7 +50,7 @@ class SearchFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentSearchBinding.inflate(inflater,container,false)
-        adapter = MenuAdapter(filteredmenufoodname,filteredmenuitemprice,filteredmenuitemimage)
+        adapter = MenuAdapter(filteredmenufoodname,filteredmenuitemprice,filteredmenuitemimage,requireContext())
         binding.searcRecyclerView.layoutManager = LinearLayoutManager(requireContext())
         binding.searcRecyclerView.adapter = adapter
 

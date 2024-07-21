@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".PayOutActivity"
-    android:background="@color/white">
+    android:background="@drawable/ic_gradient_background">
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/backButtonEdit"
         android:layout_width="35dp"
@@ -21,7 +21,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/aclonica"
         android:text="Edit"
-        android:textColor="@color/Red"
+        android:textColor="@color/white"
         android:textSize="21sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -29,7 +29,7 @@
     <LinearLayout
         android:id="@+id/LinearLayout1"
         android:layout_width="match_parent"
-        android:layout_height="57dp"
+        android:layout_height="59dp"
         android:layout_marginTop="32dp"
         android:layout_marginRight="9dp"
         android:layout_marginLeft="9dp"
@@ -59,12 +59,13 @@
             android:hint="Mohan Kumar"
             android:ems="10"
             android:layout_marginLeft="12dp"
-            android:inputType="text"/>
+            android:inputType="text"
+            android:textColor="@color/black"/>
     </LinearLayout>
     <LinearLayout
         android:id="@+id/LinearLayout2"
         android:layout_width="match_parent"
-        android:layout_height="67dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginRight="9dp"
         android:layout_marginLeft="9dp"
@@ -94,7 +95,8 @@
             android:background="@android:color/transparent"
             android:hint="123-D, Adarsh Nagar, Hisar(Haryana)"
             android:layout_marginLeft="12dp"
-            android:inputType="textMultiLine"/>
+            android:inputType="textMultiLine"
+            android:textColor="@color/black"/>
     </LinearLayout>
     <LinearLayout
         android:id="@+id/LinearLayout3"
@@ -129,7 +131,8 @@
             android:background="@android:color/transparent"
             android:hint="+91 8302478334"
             android:layout_marginLeft="12dp"
-            android:inputType="number"/>
+            android:inputType="number"
+            android:textColor="@color/black"/>
     </LinearLayout>
     <LinearLayout
         android:id="@+id/LinearLayout4"
