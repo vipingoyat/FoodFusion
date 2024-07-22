@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".PayOutActivity"
-    android:background="@drawable/ic_gradient_background">
+    android:background="@color/white">
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/backButtonEdit"
         android:layout_width="35dp"
@@ -21,7 +21,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/aclonica"
         android:text="Edit"
-        android:textColor="@color/white"
+        android:textColor="@color/Red"
         android:textSize="21sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
