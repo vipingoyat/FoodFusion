@@ -22,7 +22,6 @@
         android:textSize="25sp"/>
 
     <com.google.android.material.textfield.TextInputLayout
-        style="@style/Widget.Material3.TextInputLayout.FilledBox.Dense.ExposedDropdownMenu"
         android:layout_width="match_parent"
         android:layout_height="57dp"
         android:background="@drawable/edittextshape"
@@ -34,22 +33,23 @@
         android:layout_marginTop="15dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        app:endIconMode="custom">
+        app:endIconMode="dropdown_menu">
         <AutoCompleteTextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/listOflocation"
             android:inputType="none"
             android:background="@android:color/transparent"
-            android:hint="Choose Location"
+            android:text="Choose Location"
+            android:textColor="@color/black"
+            android:padding="12dp"
             android:fontFamily="@font/acme"/>
-        
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
         android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="400dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="300dp"
         android:gravity="center"
         android:textSize="16dp"
         android:text="To provide you with the best dining experience, we need your permission to access your device's location. By enabling location services, we can offer personalized restaurant recommendations, accurate delivery estimates, and ensure a seamless food delivery experience."

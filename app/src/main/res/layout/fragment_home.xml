@@ -44,7 +44,7 @@
 
     <TextView
         android:id="@+id/textView15"
-        android:layout_width="wrap_content"
+        android:layout_width="75dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
@@ -58,13 +58,14 @@
 
     <TextView
         android:id="@+id/viewallmenu"
-        android:layout_width="83dp"
-        android:layout_height="29dp"
+        android:layout_width="87dp"
+        android:layout_height="31dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:backgroundTint="@color/Red"
         android:textColor="@color/white"
         android:text="View Menu"
+        android:textStyle="bold"
         android:gravity="center"
         android:textAlignment="gravity"
         android:elevation="18dp"

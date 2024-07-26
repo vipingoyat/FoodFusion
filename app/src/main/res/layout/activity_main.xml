@@ -13,6 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/edittextshape"
+        android:minHeight="66dp"
         android:elevation="18dp"
         app:itemActiveIndicatorStyle="@color/Red"
         app:itemIconTint="@color/Red"
@@ -22,20 +23,21 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/menu" />
+        app:menu="@menu/menu"/>
 
     <TextView
         android:id="@+id/textView14"
-        android:layout_width="wrap_content"
+        android:layout_width="190dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="36dp"
-        android:fontFamily="@font/aladin"
-        android:text="FoodFusion"
-        android:textColor="@color/black"
-        android:textSize="37sp"
-        android:shadowColor="@color/Red"
         android:elevation="90dp"
+        android:fontFamily="@font/aladin"
+        android:shadowColor="@color/Red"
+        android:text="Food  Fusion"
+        android:textColor="@color/black"
+        android:textSize="39sp"
+        android:textStyle="bold|italic"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

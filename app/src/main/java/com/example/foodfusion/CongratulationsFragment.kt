@@ -2,8 +2,6 @@ package com.example.foodfusion
 
 import android.content.Intent
 import android.os.Bundle
-import android.renderscript.ScriptGroup.Binding
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup

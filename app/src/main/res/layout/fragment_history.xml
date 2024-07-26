@@ -89,12 +89,26 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:layout_marginEnd="32dp"
+                    android:layout_marginEnd="36dp"
                     app:cardBackgroundColor="#4CAF50"
                     app:cardCornerRadius="40dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginTop="10dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/receivedButton"
+                    android:layout_width="85dp"
+                    android:layout_height="33dp"
+                    android:text="Received"
+                    android:textColor="@color/white"
+                    android:textAllCaps="false"
+                    android:fontFamily="@font/acme"
+                    android:layout_marginTop="56dp"
+                    android:layout_marginRight="12dp"
+                    android:background="@drawable/green_bitton"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
