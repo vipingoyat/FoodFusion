@@ -12,17 +12,25 @@ import com.denzcoskun.imageslider.interfaces.ItemClickListener
 import com.denzcoskun.imageslider.models.SlideModel
 import com.example.foodfusion.Menu_bottomsheet_fragment
 import com.example.foodfusion.R
-import com.example.foodfusion.adapter.PopularAdapter
+import com.example.foodfusion.adapter.MenuAdapter
 import com.example.foodfusion.databinding.FragmentHomeBinding
+import com.example.foodfusion.model.MenuItem
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
 
 class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
+    private lateinit var database: FirebaseDatabase
+    private lateinit var menuItem: MutableList<MenuItem>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
     }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -30,13 +38,64 @@ class HomeFragment : Fragment() {
         // Inflate the layout for this fragment
         binding= FragmentHomeBinding.inflate(inflater,container,false)
 
+
+
+
+
         binding.viewallmenu.setOnClickListener {
             val bottomSheetDialog = Menu_bottomsheet_fragment()
             bottomSheetDialog.show(parentFragmentManager,"Test")
         }
+
+        //Display and Retrieve Popular menu item
+        retrieveAndDisplayPopularItems()
+
         return binding.root
 
     }
+
+    private fun retrieveAndDisplayPopularItems() {
+        //get reference to the database
+        database = FirebaseDatabase.getInstance()
+        val foodRef:DatabaseReference = database.reference.child("menu")
+        menuItem = mutableListOf()
+
+        foodRef.addListenerForSingleValueEvent(object : ValueEventListener{
+            override fun onDataChange(snapshot: DataSnapshot) {
+                for( foodsnapshot in snapshot.children){
+                    val manuitem = foodsnapshot.getValue(MenuItem::class.java)
+                    manuitem?.let {
+                        menuItem.add(it) }
+                }
+                //Display random popular item
+                randomPopularItems()
+
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+
+            }
+
+        })
+    }
+
+    private fun randomPopularItems() {
+        //Create a shuffled list of menu items
+        val index = menuItem.indices.toList().shuffled()
+        val menuItemtoShow = 6
+        val subsetMenu = index.take(menuItemtoShow).map { menuItem[it] }
+
+        setAdapter(subsetMenu)
+    }
+
+
+    private fun setAdapter(subsetMenu:List<MenuItem>) {
+        val adapter = MenuAdapter(subsetMenu, requireContext())
+        binding.popularRecyclerView.layoutManager = LinearLayoutManager(requireContext())
+        binding.popularRecyclerView.adapter = adapter
+    }
+
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -63,27 +122,5 @@ class HomeFragment : Fragment() {
                 Toast.makeText(requireContext(), itemMessage, Toast.LENGTH_SHORT).show()
             }
         })
-        val foodname = listOf("Burger","Sandwich","Subway","Pizza", "Chole Bhature","Rasmalai", "Gulab Jamun","Burger","Sandwich","Subway","Pizza", "Chole Bhature","Rasmalai", "Gulab Jamun")
-        val price = listOf("Rs 89/-", "Rs 69/-", "Rs 139/-", "Rs 129/-","Rs 79/-", "Rs 59/pc","Rs 18/pc","Rs 89/-", "Rs 69/-", "Rs 139/-", "Rs 129/-","Rs 79/-", "Rs 59/pc","Rs 18/pc")
-        val popularFoodImages = listOf(
-            R.drawable.burger_pic,
-            R.drawable.sandwich_pic,
-            R.drawable.subway_pic,
-            R.drawable.pizza_pic,
-            R.drawable.chole_bhature_pic,
-            R.drawable.rasmalai_pic,
-            R.drawable.gulab_jamun_pic,
-            R.drawable.burger_pic,
-            R.drawable.sandwich_pic,
-            R.drawable.subway_pic,
-            R.drawable.pizza_pic,
-            R.drawable.chole_bhature_pic,
-            R.drawable.rasmalai_pic,
-            R.drawable.gulab_jamun_pic)
-        val adapter = PopularAdapter(foodname,price,popularFoodImages,requireContext())
-        binding.popularRecyclerView.layoutManager = LinearLayoutManager(requireContext())
-        binding.popularRecyclerView.adapter = adapter
-    }
-    companion object {
     }
 }

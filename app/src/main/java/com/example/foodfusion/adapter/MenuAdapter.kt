@@ -43,8 +43,6 @@ class MenuAdapter(
             }
         }
 
-
-
         private fun openDetailsActivity(position: Int) {
             val menuItem = menuItems[position]
 

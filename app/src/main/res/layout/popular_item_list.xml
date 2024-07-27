@@ -24,17 +24,27 @@
             android:layout_height="match_parent"
             android:background="@color/white">
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/popularimage"
-                android:layout_width="64dp"
-                android:layout_height="64dp"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/popularimagecard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="14dp"
-                android:scaleType="centerCrop"
-                app:shapeAppearance="@drawable/popular_imageview_shape"
+                android:elevation="5dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:srcCompat="@tools:sample/avatars" />
+                app:cardCornerRadius="14dp"
+                >
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/popularimage"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:scaleType="centerCrop"
+                    app:shapeAppearance="@drawable/popular_imageview_shape"
+                    tools:srcCompat="@tools:sample/avatars" />
+
+            </androidx.cardview.widget.CardView>
+
 
             <TextView
                 android:id="@+id/popularfoodname"
@@ -46,9 +56,9 @@
                 android:textColor="@color/black"
                 android:fontFamily="@font/abhaya_libre"
                 android:textSize="17dp"
-                app:layout_constraintBottom_toBottomOf="@+id/popularimage"
-                app:layout_constraintStart_toEndOf="@+id/popularimage"
-                app:layout_constraintTop_toTopOf="@+id/popularimage" />
+                app:layout_constraintBottom_toBottomOf="@+id/popularimagecard"
+                app:layout_constraintStart_toEndOf="@+id/popularimagecard"
+                app:layout_constraintTop_toTopOf="@+id/popularimagecard" />
 
             <TextView
                 android:id="@+id/popularaddtocart"
@@ -76,7 +86,7 @@
                 android:textSize="18dp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/popularimage"
+                app:layout_constraintStart_toEndOf="@+id/popularimagecard"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 

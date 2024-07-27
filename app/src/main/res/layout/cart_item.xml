@@ -26,16 +26,24 @@
             android:layout_height="match_parent"
             android:background="@color/white">
 
-            <ImageView
-                android:id="@+id/cartimage"
-                android:layout_width="64dp"
-                android:layout_height="64dp"
-                android:scaleType="centerCrop"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cartimagecard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="14dp"
+                app:cardCornerRadius="14dp"
+                android:elevation="5dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:srcCompat="@tools:sample/avatars" />
+                app:layout_constraintTop_toTopOf="parent">
+                <ImageView
+                    android:id="@+id/cartimage"
+                    android:layout_width="74dp"
+                    android:layout_height="77dp"
+                    android:scaleType="centerCrop"
+                    tools:srcCompat="@tools:sample/avatars" />
+            </androidx.cardview.widget.CardView>
+
 
             <TextView
                 android:id="@+id/cart_food_name"
@@ -50,7 +58,7 @@
                 android:fontFamily="@font/abhaya_libre"
                 app:chainUseRtl="false"
                 app:layout_constraintBottom_toTopOf="@+id/cart_itemprice"
-                app:layout_constraintStart_toEndOf="@+id/cartimage"
+                app:layout_constraintStart_toEndOf="@+id/cartimagecard"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.476"
                 app:layout_optimizationLevel="chains" />
@@ -68,7 +76,7 @@
                 android:fontFamily="@font/abhaya_libre"
                 app:chainUseRtl="false"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/cartimage"
+                app:layout_constraintStart_toEndOf="@+id/cartimagecard"
                 app:layout_optimizationLevel="chains" />
 
             <ImageButton

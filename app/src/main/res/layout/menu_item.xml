@@ -25,17 +25,26 @@
             android:layout_height="match_parent"
             android:background="@color/white">
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/menuimage"
-                android:layout_width="64dp"
-                android:layout_height="64dp"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/imagecard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="14dp"
-                android:scaleType="centerCrop"
-                app:shapeAppearance="@drawable/popular_imageview_shape"
+                app:cardCornerRadius="14dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:srcCompat="@tools:sample/avatars" />
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/menuimage"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:scaleType="centerCrop"
+                    app:shapeAppearance="@drawable/popular_imageview_shape"
+
+                    tools:srcCompat="@tools:sample/avatars" />
+            </androidx.cardview.widget.CardView>
+
 
             <TextView
                 android:id="@+id/menufoodname"
@@ -47,9 +56,9 @@
                 android:textColor="@color/black"
                 android:fontFamily="@font/abhaya_libre"
                 android:textSize="17dp"
-                app:layout_constraintBottom_toBottomOf="@+id/menuimage"
-                app:layout_constraintStart_toEndOf="@+id/menuimage"
-                app:layout_constraintTop_toTopOf="@+id/menuimage" />
+                app:layout_constraintBottom_toBottomOf="@+id/imagecard"
+                app:layout_constraintStart_toEndOf="@+id/imagecard"
+                app:layout_constraintTop_toTopOf="@+id/imagecard" />
 
             <TextView
                 android:id="@+id/menuaddtocart"
@@ -77,7 +86,7 @@
                 android:fontFamily="@font/abhaya_libre"
                 android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/menuimage"
+                app:layout_constraintStart_toEndOf="@+id/imagecard"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
