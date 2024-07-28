@@ -69,7 +69,6 @@ class HomeFragment : Fragment() {
                 }
                 //Display random popular item
                 randomPopularItems()
-
             }
 
             override fun onCancelled(error: DatabaseError) {

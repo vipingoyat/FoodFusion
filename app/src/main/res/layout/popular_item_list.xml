@@ -37,10 +37,9 @@
                 >
                 <com.google.android.material.imageview.ShapeableImageView
                     android:id="@+id/popularimage"
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
+                    android:layout_width="66dp"
+                    android:layout_height="69dp"
                     android:scaleType="centerCrop"
-                    app:shapeAppearance="@drawable/popular_imageview_shape"
                     tools:srcCompat="@tools:sample/avatars" />
 
             </androidx.cardview.widget.CardView>

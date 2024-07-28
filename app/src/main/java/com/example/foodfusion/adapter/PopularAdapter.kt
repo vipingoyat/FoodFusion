@@ -23,7 +23,7 @@ class PopularAdapter(private val items:List<String> ,private val price:List<Stri
         holder.bind(item, images, price)
 
         holder.itemView.setOnClickListener{
-            //SetonClickListner to Open Details
+            //SetonClick Listener to Open Details
             val intent = Intent(requireContext, DetailsActivity::class.java)
             intent.putExtra("MenuItemName", item)
             intent.putExtra("MenuItemImage", images)

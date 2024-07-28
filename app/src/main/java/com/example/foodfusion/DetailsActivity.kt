@@ -34,11 +34,11 @@ class DetailsActivity : AppCompatActivity() {
         //Initialize firebase auth
         auth = FirebaseAuth.getInstance()
 
-        foodName = intent.getStringExtra("foodName")
-        foodPrice = intent.getStringExtra("foodPrice")
+        foodName = intent.getStringExtra("MenuItemName")
+        foodPrice = intent.getStringExtra("MenuItemPrice")
         foodDescription = intent.getStringExtra("MenuItemDescription")
         foodIngredients = intent.getStringExtra("MenuItemIngredients")
-        foodImage = intent.getStringExtra("foodImage")
+        foodImage = intent.getStringExtra("MenuItemImage")
 
         with(binding){
             DetailFoodName.text = foodName
@@ -46,11 +46,6 @@ class DetailsActivity : AppCompatActivity() {
             ingredientsTextView.text = foodIngredients
             Glide.with(this@DetailsActivity).load(Uri.parse(foodImage)).into(DetailFoodImage)
         }
-
-
-
-
-
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -71,7 +66,7 @@ class DetailsActivity : AppCompatActivity() {
         val userId = auth.currentUser?.uid?:""
 
         //Create a cart item object
-        val cartItem = CartItem(foodImage.toString(),foodPrice.toString(),foodDescription.toString(),foodImage.toString(), 1)
+        val cartItem = CartItem(foodName.toString(),foodPrice.toString(),foodDescription.toString(),foodImage.toString(), 1,foodIngredients)
 
         //Save data to cart items to firebase database
         database.child("user").child(userId).child("CartItems").push().setValue(cartItem).addOnSuccessListener {
