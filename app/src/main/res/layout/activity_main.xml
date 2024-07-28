@@ -12,7 +12,6 @@
         android:id="@+id/bottomNavigationView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/edittextshape"
         android:minHeight="66dp"
         android:elevation="18dp"
         app:itemActiveIndicatorStyle="@color/Red"

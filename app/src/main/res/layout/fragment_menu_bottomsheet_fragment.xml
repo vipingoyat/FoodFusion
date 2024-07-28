@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
     tools:context=".Menu_bottomsheet_fragment"
     android:background="@color/white">
-    
+
     <ImageButton
         android:id="@+id/buttonBack"
         android:layout_marginTop="9dp"
-        android:layout_marginLeft="9dp"
-        android:layout_width="26dp"
-        android:layout_height="26dp"
-        android:background="@android:color/transparent"
+        android:layout_marginStart="9dp"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
         android:src="@drawable/arrow_left"
-        />
+        app:tint="@color/Red" />
 
     <TextView
-        android:layout_marginTop="8dp"
         android:gravity="center"
-        android:textSize="26dp"
-        android:textColor="@color/black"
+        android:textSize="29sp"
+        android:textColor="@color/Red"
         android:fontFamily="@font/acme"
+        android:textStyle="bold"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="Cart" />

@@ -51,7 +51,7 @@ class SearchFragment : Fragment() {
         originalMenuItem = mutableListOf()
         foodRef.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-                for( foodsnapshot in snapshot.children){
+                for(foodsnapshot in snapshot.children){
                     val manuitem = foodsnapshot.getValue(MenuItem::class.java)
                     manuitem?.let {
                         originalMenuItem.add(it) }

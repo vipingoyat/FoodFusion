@@ -41,24 +41,32 @@
             android:background="@color/white">
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/recentbuyItem"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/white">
 
-                <ImageView
-                    android:id="@+id/imageView9"
-                    android:layout_width="62dp"
-                    android:layout_height="62dp"
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/imagecard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="12dp"
                     android:layout_marginStart="9dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:src="@tools:sample/avatars"
-                    android:src="@drawable/img"
-                    android:scaleType="centerCrop"/>
+                    app:layout_constraintTop_toTopOf="parent">
+                    <ImageView
+                        android:id="@+id/recentbuyimage"
+                        android:layout_width="68dp"
+                        android:layout_height="68dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/img"
+                        tools:src="@tools:sample/avatars" />
+
+                </androidx.cardview.widget.CardView>
 
                 <TextView
-                    android:id="@+id/textView20"
+                    android:id="@+id/recentbuyFoodName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
@@ -68,12 +76,12 @@
                     android:textColor="@color/black"
                     android:textSize="17sp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@+id/imageView9"
+                    app:layout_constraintStart_toEndOf="@+id/imagecard"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_chainStyle="packed" />
 
                 <TextView
-                    android:id="@+id/textView22"
+                    android:id="@+id/recentbuyFoodPrice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
@@ -83,16 +91,16 @@
                     android:textSize="18sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/imageView9"
-                    app:layout_constraintTop_toBottomOf="@+id/textView20" />
+                    app:layout_constraintStart_toEndOf="@+id/imagecard"
+                    app:layout_constraintTop_toBottomOf="@+id/recentbuyFoodName" />
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
                     android:layout_marginEnd="36dp"
                     app:cardBackgroundColor="#4CAF50"
                     app:cardCornerRadius="40dp"
-                    android:layout_marginTop="10dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -100,15 +108,15 @@
                     android:id="@+id/receivedButton"
                     android:layout_width="85dp"
                     android:layout_height="33dp"
-                    android:text="Received"
-                    android:textColor="@color/white"
-                    android:textAllCaps="false"
-                    android:fontFamily="@font/acme"
                     android:layout_marginTop="56dp"
                     android:layout_marginRight="12dp"
                     android:background="@drawable/green_bitton"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"/>
+                    android:fontFamily="@font/acme"
+                    android:text="Received"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

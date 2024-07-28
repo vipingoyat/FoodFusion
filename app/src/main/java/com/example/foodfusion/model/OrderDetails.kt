@@ -2,6 +2,7 @@ package com.example.foodfusion.model
 
 import android.os.Parcel
 import android.os.Parcelable
+import java.io.Serializable
 import java.util.ArrayList
 
 data class OrderDetails(
@@ -18,7 +19,7 @@ data class OrderDetails(
     var paymentRecieved: Boolean = false,
     var itemPushKey: String? = null,
     var currentTime: Long = 0
-) : Parcelable {
+) : Serializable {
     constructor(parcel: Parcel) : this() {
         userUid = parcel.readString()
         userName = parcel.readString()
@@ -59,7 +60,7 @@ data class OrderDetails(
         this.paymentRecieved = b1
     }
 
-    override fun writeToParcel(parcel: Parcel, flags: Int) {
+     fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeString(userUid)
         parcel.writeString(userName)
         parcel.writeString(address)
@@ -71,7 +72,7 @@ data class OrderDetails(
         parcel.writeLong(currentTime)
     }
 
-    override fun describeContents(): Int {
+     fun describeContents(): Int {
         return 0
     }
 
