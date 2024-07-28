@@ -10,7 +10,10 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/backButtonEdit"
         android:layout_width="35dp"
-        android:layout_height="31dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="12dp"
+        android:backgroundTint="@color/Red"
+        android:elevation="15dp"
         android:background="@drawable/arrow_left"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -19,10 +22,10 @@
         android:id="@+id/textView25"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/aclonica"
-        android:text="Edit"
+        android:fontFamily="@font/aladin"
+        android:text="Details"
         android:textColor="@color/Red"
-        android:textSize="21sp"
+        android:textSize="38sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/backButtonEdit" />
@@ -60,7 +63,6 @@
             android:layout_weight="1"
             android:background="@android:color/transparent"
             android:ems="10"
-            android:hint="Mohan Kumar"
             android:inputType="text"
             android:textColor="@color/black" />
     </LinearLayout>
@@ -81,12 +83,13 @@
 
         <TextView
             android:layout_width="45dp"
-            android:layout_height="wrap_content"
+            android:layout_height="63dp"
             android:layout_marginLeft="9dp"
             android:layout_weight="1"
             android:background="@android:color/transparent"
             android:fontFamily="@font/acme"
             android:text="Address"
+            android:gravity="center_vertical"
             android:textColor="@color/black"
             android:textSize="19sp" />
 
@@ -98,14 +101,13 @@
             android:layout_weight="1"
             android:background="@android:color/transparent"
             android:ems="10"
-            android:hint="123-D, Adarsh Nagar, Hisar(Haryana)"
             android:inputType="textMultiLine"
             android:textColor="@color/black" />
     </LinearLayout>
     <LinearLayout
         android:id="@+id/LinearLayout3"
         android:layout_width="match_parent"
-        android:layout_height="57dp"
+        android:layout_height="62dp"
         android:layout_marginTop="16dp"
         android:layout_marginRight="9dp"
         android:layout_marginLeft="9dp"
@@ -136,14 +138,13 @@
             android:layout_weight="1"
             android:background="@android:color/transparent"
             android:ems="10"
-            android:hint="+91 8302478334"
             android:inputType="number"
             android:textColor="@color/black" />
     </LinearLayout>
     <LinearLayout
         android:id="@+id/LinearLayout4"
         android:layout_width="match_parent"
-        android:layout_height="77dp"
+        android:layout_height="79dp"
         android:layout_marginTop="16dp"
         android:layout_marginRight="9dp"
         android:layout_marginLeft="9dp"
@@ -172,7 +173,7 @@
     <LinearLayout
         android:id="@+id/LinearLayout5"
         android:layout_width="match_parent"
-        android:layout_height="57dp"
+        android:layout_height="59dp"
         android:layout_marginTop="26dp"
         android:layout_marginRight="9dp"
         android:layout_marginLeft="9dp"
@@ -203,7 +204,6 @@
             android:fontFamily="@font/acme"
             android:gravity="end"
             android:paddingRight="32dp"
-            android:text="Rs 346"
             android:textColor="@color/Red"
             android:textSize="19sp" />
     </LinearLayout>
@@ -214,9 +214,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginBottom="25dp"
         android:background="@drawable/red_button"
         android:text="Place My Order"
         android:textAllCaps="false"

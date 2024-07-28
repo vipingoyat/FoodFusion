@@ -5,10 +5,22 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.example.foodfusion.R
+import com.example.foodfusion.databinding.FragmentProfileBinding
+import com.example.foodfusion.model.UserData
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
+
 class ProfileFragment : Fragment() {
 
+    private lateinit var binding: FragmentProfileBinding
 
+    private val auth = FirebaseAuth.getInstance()
+    private val database = FirebaseDatabase.getInstance()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -17,10 +29,70 @@ class ProfileFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        binding = FragmentProfileBinding.inflate(inflater,container,false)
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false)
+
+
+        setUserData()
+
+        binding.button4.setOnClickListener {
+            val name = binding.profileName.text.toString()
+            val address = binding.profileAddress.text.toString()
+            val email = binding.profileEmail.text.toString()
+            val phone = binding.profilePhone.text.toString()
+
+            updateUserData(name,address,email,phone)
+        }
+
+
+
+        return binding.root
     }
 
-    companion object {
+    private fun updateUserData(name: String, address: String, email: String, phone: String) {
+        val userId = auth.currentUser?.uid
+        if(userId!=null){
+            val userReference= database.getReference("user").child(userId)
+            val userData = hashMapOf(
+                "name" to name,
+                "address" to address,
+                "email" to email,
+                "phone" to phone
+            )
+            userReference.setValue(userData).addOnSuccessListener {
+                Toast.makeText(requireContext(),"Profile Updated Successfully",Toast.LENGTH_SHORT).show()
+            }
+                .addOnFailureListener {
+                    Toast.makeText(requireContext(),"Profile Updated Failed",Toast.LENGTH_SHORT).show()
+                }
+        }
+    }
+
+
+    private fun setUserData() {
+        val userId = auth.currentUser?.uid
+        if(userId!=null){
+            val userReference = database.getReference("user").child(userId)
+
+            userReference.addListenerForSingleValueEvent(object :ValueEventListener{
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    if(snapshot.exists()){
+                        val userProfile= snapshot.getValue(UserData::class.java)
+                        if(userProfile!=null){
+                            binding.profileName.setText(userProfile.name)
+                            binding.profileAddress.setText(userProfile.address)
+                            binding.profileEmail.setText(userProfile.email)
+                            binding.profilePhone.setText(userProfile.phone)
+                        }
+                    }
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+                    TODO("Not yet implemented")
+                }
+
+            })
+        }
     }
 }
