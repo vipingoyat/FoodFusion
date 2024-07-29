@@ -30,19 +30,35 @@ class ProfileFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        binding = FragmentProfileBinding.inflate(inflater,container,false)
-        // Inflate the layout for this fragment
+        binding = FragmentProfileBinding.inflate(inflater, container, false)
 
 
         setUserData()
 
+        //Edit Profile Button
+        binding.apply {
+            profileName.isEnabled = false
+            profileAddress.isEnabled = false
+            profileEmail.isEnabled = false
+            profilePhone.isEnabled = false
+        }
+        binding.button5.setOnClickListener {
+            binding.apply {
+                profileName.isEnabled = !profileName.isEnabled
+                profileAddress.isEnabled = !profileName.isEnabled
+                profileEmail.isEnabled = !profileName.isEnabled
+                profilePhone.isEnabled = !profileName.isEnabled
+            }
+        }
+
+        //Save Information Button
         binding.button4.setOnClickListener {
             val name = binding.profileName.text.toString()
             val address = binding.profileAddress.text.toString()
             val email = binding.profileEmail.text.toString()
             val phone = binding.profilePhone.text.toString()
 
-            updateUserData(name,address,email,phone)
+            updateUserData(name, address, email, phone)
         }
 
 
@@ -52,8 +68,8 @@ class ProfileFragment : Fragment() {
 
     private fun updateUserData(name: String, address: String, email: String, phone: String) {
         val userId = auth.currentUser?.uid
-        if(userId!=null){
-            val userReference= database.getReference("user").child(userId)
+        if (userId != null) {
+            val userReference = database.getReference("user").child(userId)
             val userData = hashMapOf(
                 "name" to name,
                 "address" to address,
@@ -61,10 +77,12 @@ class ProfileFragment : Fragment() {
                 "phone" to phone
             )
             userReference.setValue(userData).addOnSuccessListener {
-                Toast.makeText(requireContext(),"Profile Updated Successfully",Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "Profile Updated Successfully", Toast.LENGTH_SHORT)
+                    .show()
             }
                 .addOnFailureListener {
-                    Toast.makeText(requireContext(),"Profile Updated Failed",Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext(), "Profile Updated Failed", Toast.LENGTH_SHORT)
+                        .show()
                 }
         }
     }
@@ -72,14 +90,14 @@ class ProfileFragment : Fragment() {
 
     private fun setUserData() {
         val userId = auth.currentUser?.uid
-        if(userId!=null){
+        if (userId != null) {
             val userReference = database.getReference("user").child(userId)
 
-            userReference.addListenerForSingleValueEvent(object :ValueEventListener{
+            userReference.addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
-                    if(snapshot.exists()){
-                        val userProfile= snapshot.getValue(UserData::class.java)
-                        if(userProfile!=null){
+                    if (snapshot.exists()) {
+                        val userProfile = snapshot.getValue(UserData::class.java)
+                        if (userProfile != null) {
                             binding.profileName.setText(userProfile.name)
                             binding.profileAddress.setText(userProfile.address)
                             binding.profileEmail.setText(userProfile.email)
