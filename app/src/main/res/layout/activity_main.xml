@@ -19,6 +19,7 @@
         app:itemRippleColor="@color/Red"
         app:itemTextAppearanceActive="@color/Red"
         app:itemTextColor="@color/Red"
+        android:background="@color/shade"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
