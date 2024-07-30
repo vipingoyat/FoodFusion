@@ -52,6 +52,7 @@
             android:layout_marginLeft="9dp"
             android:layout_weight="1"
             android:textSize="19sp"
+            android:gravity="center"
             android:textColor="@color/black"
             android:background="@android:color/transparent"/>
 
@@ -89,7 +90,7 @@
             android:background="@android:color/transparent"
             android:fontFamily="@font/acme"
             android:text="Address"
-            android:gravity="center_vertical"
+            android:gravity="center"
             android:textColor="@color/black"
             android:textSize="19sp" />
 

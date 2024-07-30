@@ -5,21 +5,21 @@ import android.os.Parcelable
 import java.io.Serializable
 import java.util.ArrayList
 
-data class OrderDetails(
-    var userUid: String? = null,
-    var userName: String? = null,
-    var foodNames: MutableList<String>? = null,
-    var foodImages: MutableList<String>? = null,
-    var foodPrices: MutableList<String>? = null,
-    var foodQuantities: MutableList<Int>? = null,
-    var address: String? = null,
-    var totalPrice: String? = null,
-    var phoneNumber: String? = null,
-    var OrderAccepted: Boolean = false,
-    var paymentRecieved: Boolean = false,
-    var itemPushKey: String? = null,
+class OrderDetails() : Serializable {
+    var userUid: String? = null
+    var userName: String? = null
+    var foodNames: MutableList<String>? = null
+    var foodImages: MutableList<String>? = null
+    var foodPrices: MutableList<String>? = null
+    var foodQuantities: MutableList<Int>? = null
+    var address: String? = null
+    var totalPrice: String? = null
+    var phoneNumber: String? = null
+    var OrderAccepted: Boolean = false
+    var paymentRecieved: Boolean = false
+    var itemPushKey: String? = null
     var currentTime: Long = 0
-) : Serializable {
+
     constructor(parcel: Parcel) : this() {
         userUid = parcel.readString()
         userName = parcel.readString()
@@ -40,6 +40,7 @@ data class OrderDetails(
         foodItemImage: ArrayList<String>,
         foodItemQuantity: ArrayList<Int>,
         address: String,
+        totalPrice: String,
         phoneNumber: String,
         time: Long,
         itemPushKey: String?,
@@ -52,6 +53,7 @@ data class OrderDetails(
         this.foodPrices = foodItemPrice
         this.foodImages = foodItemImage
         this.foodQuantities = foodItemQuantity
+        this.totalPrice = totalPrice
         this.address = address
         this.phoneNumber = phoneNumber
         this.currentTime = time

@@ -39,9 +39,6 @@ class HomeFragment : Fragment() {
         binding= FragmentHomeBinding.inflate(inflater,container,false)
 
 
-
-
-
         binding.viewallmenu.setOnClickListener {
             val bottomSheetDialog = Menu_bottomsheet_fragment()
             bottomSheetDialog.show(parentFragmentManager,"Test")

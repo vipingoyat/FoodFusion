@@ -1,14 +1,11 @@
 package com.example.foodfusion
 
-
-import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.foodfusion.Fragment.CartFragment
 import com.example.foodfusion.databinding.ActivityPayOutBinding
 import com.example.foodfusion.model.OrderDetails
 import com.google.firebase.auth.FirebaseAuth
@@ -59,6 +56,7 @@ class PayOutActivity : AppCompatActivity() {
         //Initialize the Firebase auth
         auth = FirebaseAuth.getInstance()
 
+        //Initialize the DatabaseReference
         databaseReference = FirebaseDatabase.getInstance().reference
 
         //Set User Data
@@ -95,7 +93,7 @@ class PayOutActivity : AppCompatActivity() {
         userId= auth.currentUser?.uid?:""
         val time = System.currentTimeMillis()
         val itemPushKey = databaseReference.child("OrderDetails").push().key
-        val orderDetails = OrderDetails(userId,name,foodItemName,foodItemPrice,foodItemImage,foodItemQuantity,address,phoneNumber,time,itemPushKey,false,false)
+        val orderDetails = OrderDetails(userId,name,foodItemName,foodItemPrice,foodItemImage,foodItemQuantity,address,totalAmount,phoneNumber,time,itemPushKey,false,false)
         val orderReference = databaseReference.child("OrderDetails").child(itemPushKey!!)
         orderReference.setValue(orderDetails).addOnSuccessListener {
 
